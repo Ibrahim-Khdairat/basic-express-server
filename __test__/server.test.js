@@ -28,6 +28,16 @@ describe('Middle Ware', () => {
         expect(response.status).toBe(status);
     });
 
+    it('Should check the data response  of the status', async () => {
+        // arrange
+        let status = 200;
+        let param = '/status';
+        // act
+        const response = await request.get(param);
+        // assert
+        expect(response.status).toBe(status);
+        expect(typeof response.body).toEqual('object');
+    });
 
     it('Should Check 500 Internal Server Error', async () => {
         // arrange
