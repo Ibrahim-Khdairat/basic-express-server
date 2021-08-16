@@ -35,6 +35,16 @@ server.get('/person', (req, res) => {
     }
 });
 
+
+server.get('/status', (req, res) => {
+    let statusOutput = {
+        "domain": "ibrahim-basic-express-server.herokuapp.com",
+        "status": "running",
+        "PORT ": 3000,
+    }
+    res.status(200).json(statusOutput)
+})
+
 server.get('/bad', (req, res, next) => {
     next('error from bad end point');
 });
